@@ -24,13 +24,13 @@ df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/Dash-
 app =  Dash(__name__)
 #Layout
 app.layout = html.Div([
-    html.Div(children = "Exercicio 2"),
+    html.Div(children = "Exercicio 2", id = 'title'),
     dcc.Dropdown(id="state-dropdown", options=df.state.unique(), value="Alabama"),
-    dcc.Graph(id='graph1')
+    dcc.Graph(id='graph1', figure = {})
         
 ])
 
-#@callback()
+
 
 if __name__ == '__main__':
   app.run(debug=True)
